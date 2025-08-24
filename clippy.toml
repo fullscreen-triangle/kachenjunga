@@ -1,0 +1,25 @@
+# Clippy configuration for Kachenjunga
+# 
+# Configured for biological quantum computer algorithm development
+# with emphasis on mathematical precision and divine intervention detection
+
+# Allow complex mathematical expressions
+too-many-arguments-threshold = 10
+type-complexity-threshold = 500
+cognitive-complexity-threshold = 50
+
+# Allow longer names for mathematical clarity
+enum-variant-name-threshold = 50
+
+# Mathematical precision settings
+excessive-precision-threshold = 15
+
+# Allow larger structures for comprehensive algorithm state
+struct-excessive-bools-threshold = 10
+
+# Divine intervention and impossibility detection may require complex logic
+match-arm-blocks = false
+single-match-else = false
+
+# Allow mathematical constant definitions
+unreadable-literal-lint-fractions = false

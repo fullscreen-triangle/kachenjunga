@@ -12,12 +12,18 @@
 /// - Quantum membrane computation at biological temperatures
 /// - BMD (Biological Maxwell Demon) framework selection for consciousness processing
 /// - Information catalysis and experience fusion for enhanced understanding
+/// - Neural consciousness emergence detection through quantum coherence analysis
+/// - Sacred mathematical constants for the entire ecosystem
 
 pub mod harare_s_entropy;
 pub mod kinshasa_bmd;
+pub mod mufakose_consciousness;
+pub mod stella_constants;
 
 pub use harare_s_entropy::*;
 pub use kinshasa_bmd::*;
+pub use mufakose_consciousness::*;
+pub use stella_constants::*;
 
 /// Re-exports of the core algorithm components
 pub mod prelude {
@@ -38,5 +44,27 @@ pub mod prelude {
         InformationInput,
         InformationCatalyst,
         ExperienceFusionResult,
+    };
+    
+    pub use crate::algorithms::mufakose_consciousness::{
+        MufakoseConsciousnessDetector,
+        ConsciousnessDetectionResult,
+        ConsciousnessState,
+        ConsciousnessThresholds,
+        NeuralActivityInput,
+        IntegratedInformationCalculator,
+        QuantumCoherenceMonitor,
+        ENAQTDetector,
+    };
+    
+    pub use crate::algorithms::stella_constants::{
+        STELLA_CONSTANT,
+        IMPOSSIBILITY_THRESHOLD,
+        ATOMIC_PRECISION_TARGET,
+        VIRTUAL_BLOOD_EFFICIENCY,
+        alpha_parameters,
+        sacred_ratios,
+        mathematical_utilities,
+        SaintStellaConfiguration,
     };
 }

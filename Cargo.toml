@@ -2,65 +2,87 @@
 name = "kachenjunga"
 version = "0.1.0"
 edition = "2021"
-description = "Advanced algorithms for biological quantum computation and neural systems"
-authors = ["kundai"]
+description = "Universal Algorithm Solver for Biological Quantum Computer Systems - The Sacred Mathematics of Impossibility"
+authors = ["Kundai Farai Sachikonye <kundai.sachikonye@wzw.tum.de>"]
 license = "MIT"
+repository = "https://github.com/fullscreen-triangle/kachenjunga"
+documentation = "https://docs.rs/kachenjunga"
+keywords = ["quantum", "consciousness", "s-entropy", "bmd", "divine-intervention"]
+categories = ["science", "mathematics", "algorithms"]
+readme = "README.md"
 
-[workspace]
-members = [
-    "crates/intracellular",
-    "crates/quantum-bio", 
-    "crates/neural-algorithms",
-    "crates/atp-dynamics",
-    "crates/maxwell-demons",
-    "crates/membrane-quantum",
-    "crates/oscillatory-systems",
-    "crates/consciousness-emergence",
-]
+# Build configuration
+[lib]
+name = "kachenjunga"
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-# Core numerical computing
-nalgebra = "0.32"
-ndarray = "0.15"
+# Core mathematical computing
+nalgebra = { version = "0.32", features = ["serde-serialize", "rand"] }
+ndarray = { version = "0.15", features = ["serde", "rayon"] }
 num-complex = "0.4"
-rand = "0.8"
+num-traits = "0.2"
+rand = { version = "0.8", features = ["std_rng"] }
 rand_distr = "0.4"
 
-# Scientific computing
+# Scientific computing and parallel processing
 rayon = "1.8"
 approx = "0.5"
+statrs = "0.16"
 
 # Serialization and configuration
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive", "rc"] }
 serde_json = "1.0"
 toml = "0.8"
+bincode = "1.3"
 
-# Error handling
+# Async runtime for biological quantum processing
+tokio = { version = "1.0", features = ["full", "tracing"] }
+futures = "0.3"
+async-trait = "0.1"
+
+# Error handling and logging
 anyhow = "1.0"
 thiserror = "1.0"
-
-# Async runtime (for hardware integration)
-tokio = { version = "1.0", features = ["full"] }
-
-# Logging and tracing
+log = "0.4"
 tracing = "0.1"
-tracing-subscriber = "0.3"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Atomic clock and precision timing
+chrono = { version = "0.4", features = ["serde"] }
+
+# Mathematical special functions for S-entropy calculations
+special = "0.10"
+
+# Memory management for zero-memory processing
+dashmap = "5.4"
+
+# Network integration for distributed BMD coordination
+reqwest = { version = "0.11", features = ["json"] }
+
+# Foreign Function Interface support
+libc = "0.2"
+
+# WebAssembly support for browser integration
+wasm-bindgen = { version = "0.2", optional = true }
+js-sys = { version = "0.3", optional = true }
+web-sys = { version = "0.3", optional = true }
 
 [dev-dependencies]
+tokio-test = "0.4"
+proptest = "1.0"
+quickcheck = "1.0"
+serial_test = "2.0"
 criterion = { version = "0.5", features = ["html_reports"] }
-proptest = "1.4"
 
-[[bench]]
-name = "atp_dynamics"
-harness = false
-
-[[bench]]
-name = "maxwell_demons"
-harness = false
-
-[[bench]]
-name = "quantum_coherence"
-harness = false
+[features]
+default = ["std", "serde"]
+std = []
+wasm = ["wasm-bindgen", "js-sys", "web-sys"]
+divine-intervention-testing = []
+hardware-integration = ["tokio"]
+visualization = []
+full = ["hardware-integration", "visualization", "divine-intervention-testing"]
 
 [profile.release]
 opt-level = 3
@@ -72,9 +94,32 @@ panic = "abort"
 opt-level = 3
 debug = true
 
-[features]
-default = ["std"]
-std = []
-hardware-integration = ["tokio"]
-visualization = []
-full = ["hardware-integration", "visualization"]
+# Benchmarks for the core algorithms
+[[bench]]
+name = "s_entropy_navigation"
+harness = false
+
+[[bench]]
+name = "bmd_processing"  
+harness = false
+
+[[bench]]
+name = "consciousness_detection"
+harness = false
+
+[[bench]]
+name = "divine_intervention"
+harness = false
+
+# Examples demonstrating the system capabilities
+[[example]]
+name = "complete_system_demo"
+required-features = ["std"]
+
+[[example]]
+name = "s_entropy_navigation"
+required-features = ["std"]
+
+[[example]]
+name = "virtual_blood_circulation"
+required-features = ["std"]
